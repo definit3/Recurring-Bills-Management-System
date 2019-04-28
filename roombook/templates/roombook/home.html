@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+<div class="signupSection">
+  <div class="info">
+    <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+  </div>
+  <form method="POST" class="signupForm" name="signupform">
+      {% csrf_token %}
+    <h2>Enter Booking Details</h2>
+    <ul class="noBullet">
+      <li>
+
+        <label for="username"></label>
+        {{ form.name }}
+      </li>
+      <li>
+        <label for="password"></label>
+        {{ form.no_of_rooms }}
+      </li>
+      <li>
+        <label for="email"></label>
+        {{ form.start_date }}
+      </li>
+        <li>
+        <label for="email"></label>
+        {{ form.end_date }}
+      </li>
+              <li>
+        <label for="username"></label>
+        {{ form.reason }}
+      </li>
+      <li id="center-btn">
+        <input type="submit" id="join-btn" name="join" alt="Join" value="Submit">
+      </li>
+    </ul>
+  </form>
+</div>
+
+{% endblock %}
+
+{% block more_links %}
+    <a href="{% url 'register' %}">Book Here !</a>
+    <a href="{% url 'logout' %}">Logout</a>
+
+{% endblock more_links %}

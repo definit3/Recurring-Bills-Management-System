@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}">
+
+    <div class="wrapper">
+        <h2>User Details </h2>
+        <div class="table">
+
+            <div class="row">
+                <div class="cell">
+                    Name
+                </div>
+                <div class="cell">
+                    {{ student.student_name }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    Father's Name
+                </div>
+                <div class="cell">
+                    {{ student.father_name }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="cell">
+                    Enrollment Number
+                </div>
+                <div class="cell">
+                    {{ student.enrollment_no }}
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="wrap"><h1>Check room Status! </h1></div>
+        <a class="mycircle " href="{% url 'matrix' %}">Check room Status</a>
+
+    </div>
+
+{% endblock content %}
+
+
+{% block more_links %}
+    <a href="{% url 'edit' %}">
+            Update Details
+        </a>
+
+{% endblock more_links %}

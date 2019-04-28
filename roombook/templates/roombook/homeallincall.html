@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+<div class="signupSection">
+  <div class="info">
+    <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+  </div>
+  <form method="POST" class="signupForm" name="signupform">
+      {% csrf_token %}
+    <h2>Enter Billing Details</h2>
+    <ul class="noBullet">
+      <li>
+        Bill Name:
+        <label for="username"></label>
+        {{ form.name_of_the_bill }}
+      </li>
+      <li>
+        Bill Amount:
+        <label for="password"></label>
+        {{ form.bill_amount }}
+      </li>
+      <li>
+        Due Date:
+        <label for="email"></label>
+        {{ form.due_date }}
+      </li>
+      <li id="center-btn">
+        <input type="submit" id="join-btn" name="join" alt="Join" value="Submit">
+      </li>
+    </ul>
+  </form>
+</div>
+
+{% endblock %}
+
+{% block more_links %}
+    <a href="{% url 'register' %}">Enter Bills Here !</a>
+    <a href="{% url 'logout' %}">Logout</a>
+
+{% endblock more_links %}

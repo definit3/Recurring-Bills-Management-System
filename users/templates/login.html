@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+
+
+<div class="wrap">
+    <div id="login" class="signin-card">
+        <div class="logo-image">
+            <img src="http://www.officialpsds.com/images/thumbs/Spiderman-Logo-psd59240.png" alt="Logo" title="Logo" width="138">
+        </div>
+        <form action="" method="post" class="login-form">
+            {% csrf_token %}
+
+            <div id="form-login-username" class="form-group">Username <br> {{ form.username }}<br></div>
+            <div id="form-login-password" class="form-group"> Password <br> {{ form.password }}</div>
+            <div><button class="btn btn-block btn-info ripple-effect" type="submit" name="Submit" alt="sign in">Sign in</button></div>
+        </form>
+
+
+
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block more_links %}
+    <a href="{% url 'register' %}">Enter Bills here !</a>
+        <a href="{% url 'reg_form' %}">Sign Up</a>
+{% endblock more_links %}

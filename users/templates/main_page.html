@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_page.css' %}">
+
+<div style="margin-top: 50px;">
+<div class="list-type1">
+<ol>
+    <li>
+        <a href="">Office Rent</a></li>
+    <li>
+        <a href="">Electricity Bill</a></li>
+    <li>
+        <a href="">Internet Bill.</a></li>
+
+    <li>
+        <a href="">Cleaning Bill.</a></li>
+    <li>
+        <a href="">Employee salaries.</a></li>
+
+</ol>
+
+</div>
+ <a class="sp-circle-link " href="home/">Enter</a>
+   </div>
+<div class="underlay-black"></div>
+
+{% endblock content %}
+
+
+{% block more_links %}
+    <a href="{% url 'register' %}">Enter Bills here !</a>
+{% endblock more_links %}

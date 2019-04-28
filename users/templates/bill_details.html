@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}">
+
+    <div class="wrapper">
+
+        <h2>Billing Details </h2>
+        {% for i in bill %}
+        <div class="table">
+
+            <div class="row">
+                <div class="cell">
+                   Bill Name
+                </div>
+                <div class="cell">
+                    {{ i.name_of_the_bill }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                   Amount (INR)
+                </div>
+                <div class="cell">
+                    {{ i.bill_amount }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="cell">
+                    Due Date
+                </div>
+                <div class="cell">
+                    {{ i.due_date }}
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+        <a class="mycircle " href="{% url 'roombook' %}">Bills</a>
+
+    </div>
+
+{% endblock content %}
+{% block more_links %}
+    <a href="{% url 'register' %}">Enter Bills Here !</a>
+    <a href="{% url 'logout' %}">Logout</a>
+
+{% endblock more_links %}

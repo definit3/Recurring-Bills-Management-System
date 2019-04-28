@@ -1,0 +1,431 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Inconsolata:700);
+
+        .underlay-black {
+            background: rgba(0,0,0,0.7);
+            z-index: -1;
+        }
+        body {
+            font-family: 'Inconsolata', sans-serif;
+            font-style: normal;
+            font-weight: 200;
+            margin: 0px;
+            <!--background: #310404 url(https://cdn.hipwallpaper.com/i/11/4/oQHCrX.jpg)-->
+            background: white
+
+        }
+        a {
+            text-decoration: none;
+        }
+        .wrap {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #02030C;
+            color: black;
+            padding: 15px;
+            text-align: center;
+
+        }
+                #seat1S {
+            height: 36px;
+            width:36px;
+            border: 1px solid gray;
+            cursor:pointer;
+            border-radius:70%;
+            background-color: red;
+            display: inline-block;
+            font-size: 15.5px;
+            font-family:Times, serif;
+            padding:3.5px;
+
+        }
+        #seat2S {
+            height: 36px;
+            width: 36px;
+            border: 1px solid gray;
+            cursor:pointer;
+            border-radius:50%;
+            background-color: #eff5f7;
+            display: inline-block;
+            font-size: 15.5px;
+            font-family:Times, serif;
+            padding:3.5px;
+        }
+        .button-custom {
+            -webkit-transition: all 300ms cubic-bezier(0.1590, 0.500, 0.150, 1.360);
+            -moz-transition: all 300ms cubic-bezier(0.1590, 0.500, 0.150, 1.360);
+            -ms-transition: all 300ms cubic-bezier(0.1590, 0.500, 0.150, 1.360);
+            -o-transition: all 300ms cubic-bezier(0.1590, 0.500, 0.150, 1.360);
+            transition: all 300ms cubic-bezier(0.1590, 0.500, 0.150, 1.360);
+            display: block;
+            margin: 20px auto;
+            max-width: 180px;
+            border-radius: 4px;
+            padding: 10px 35px;
+            border: none;
+            color: black;
+            background-color: white;
+            box-shadow: steelblue 0 0px 0px 2px inset;
+            font-family: 'Inconsolata', sans-serif;
+            font-style: normal;
+            font-size: 1.3em;
+        }
+        .button-custom:hover {
+            color: white;
+            box-shadow: steelblue 0 80px 0px 2px inset;
+            border: none;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .nav {
+            height: 50px;
+            width: 100%;
+            background-color: #121426;
+            position: relative;
+            z-index: 1;
+        }
+        .nav > .nav-header {
+            display: inline;
+        }
+        .nav > .nav-header > .nav-title {
+            display: inline-block;
+            font-size: 22px;
+            color: #fff;
+            padding: 10px 10px 10px 10px;
+        }
+        .nav > .nav-btn {
+            display: none;
+        }
+        .nav > .nav-links {
+            display: inline;
+            float: right;
+            font-size: 23px;
+        }
+        .nav > .nav-links > a {
+            display: inline-block;
+            padding: 13px 10px 13px 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .nav > .nav-links > a:hover {
+            background-color: lightsteelblue;
+        }
+        .nav > #nav-check {
+            display: none;
+        }
+        .nav-title > a {
+            text-decoration:none;
+            color: white;
+        }
+        .nav-title > a:active, .nav-title > a:hover, .nav-title > a:focus {
+            text-decoration:none;
+            color: white;
+        }
+        @media screen and (max-width:700px) {
+            .nav > .nav-btn {
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            .nav > .nav-btn > label {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                padding: 13px;
+                background-color: lightsteelblue;
+            }
+            .nav > .nav-btn > label:hover {
+                background-color: lightsteelblue;
+            }
+            .nav > .nav-btn > label > span {
+                display: block;
+                width: 25px;
+                height: 10px;
+                border-top: 2px solid #eee;
+            }
+            .nav > .nav-links {
+                position: absolute;
+                display: block;
+                width: 100%;
+                background-color: lightsteelblue;
+                height: 0px;
+                transition: all 0.15s ease-in;
+                overflow-y: hidden;
+                top: 50px;
+                left: 0px;
+            }
+            .nav > .nav-links > a {
+                display: block;
+                width: 100%;
+            }
+            .nav > #nav-check:not(:checked) + .nav-links {
+                height: 0px;
+            }
+            .nav > #nav-check:checked + .nav-links {
+                height: calc(100vh - 50px);
+                overflow-y: auto;
+            }
+        }
+                .table1{
+            opacity=0.2;
+            background-color:#b8c6dd;
+            background-size: 100% 800px;
+            border-radius:10%;
+            margin-left:20px;
+            margin-right:20px;
+        }
+
+        .sp-circle-link {
+	position: absolute;
+	left: 50%;
+	bottom: 100px;
+	margin-left: -50px;
+	text-align: center;
+	line-height: 100px;
+	width: 100px;
+	height: 100px;
+	background: #274557;
+	color: #FEFEFE;
+	font-size: 25px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-animation: fadeInRotate 1s linear .2s backwards;
+	-moz-animation: fadeInRotate 1s linear .2s backwards;
+	-ms-animation: fadeInRotate 1s linear .2s backwards;
+	animation: fadeInRotate 1s linear .2s backwards;
+	-webkit-transform: scale(1) rotate(0deg);
+	-moz-transform: scale(1) rotate(0deg);
+	-o-transform: scale(1) rotate(0deg);
+	-ms-transform: scale(1) rotate(0deg);
+	transform: scale(1) rotate(0deg);
+}
+.sp-circle-link:hover {
+	background: #85373b;
+	color: #fff;
+}
+/**/
+
+@-webkit-keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-webkit-transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-webkit-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		-webkit-transform: scale(0);
+	}
+}
+@-webkit-keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-webkit-transform: scale(1.3);
+	}
+	50% {
+		opacity: 0.5;
+		text-shadow: 0px 0px 10px #fff;
+		-webkit-transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-webkit-transform: scale(1);
+	}
+}
+@-webkit-keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		-webkit-transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		-webkit-transform: scale(5);
+	}
+}
+@-webkit-keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1) rotate(0deg);
+	}
+}
+/**/
+
+@-moz-keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-moz-transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-moz-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		-moz-transform: scale(0);
+	}
+}
+@-moz-keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-moz-transform: scale(1.3);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-moz-transform: scale(1);
+	}
+}
+@-moz-keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		-moz-transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		-moz-transform: scale(5);
+	}
+}
+@-moz-keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: scale(1) rotate(0deg);
+	}
+}
+/**/
+
+@keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		transform: scale(0);
+	}
+}
+@keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		transform: scale(1.3);
+	}
+	50% {
+		opacity: 0.5;
+		text-shadow: 0px 0px 10px #fff;
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		transform: scale(1);
+	}
+}
+@keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		transform: scale(5);
+	}
+}
+@keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) rotate(0deg);
+	}
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+<div class="nav">
+    <div class="nav-header">
+        <div class="nav-title">
+            <a href="{% url 'main_page' %}">Recurring Bills Management System</a>
+        </div>
+    </div>
+    <div class="nav-btn">
+        <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+    <div class="nav-links">
+
+
+        {% block more_links %}
+        {% endblock more_links %}
+
+    </div>
+</div>
+
+
+{% block content %}
+{% endblock content %}
+
+
+</body>
+
+</html>

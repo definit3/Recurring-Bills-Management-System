@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+<div class="rap">
+    <h1> Your Bill is uploaded. You will get an email notification on the due date ! </h1>
+    <br>
+</div>
+{% endblock %}
+
+{% block more_links %}
+    <a href="{% url 'logout' %}">Logout</a>
+
+{% endblock more_links %}
+
