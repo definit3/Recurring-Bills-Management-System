@@ -1,6 +1,13 @@
-# Guest-Room-Booking
-Guest Room Booking can be used by the college administrators to book their Guest Rooms. 
-The project makes use of a SQLite, Django, HTML and CSS. The system makes use of SQLite to store the user information, and HTML/CSS for creating a user friendly interface..
+# Recurring Bills Management System
+At the beginning of every month, AllinCall is supposed to pay certain bills. This includes several bills like:
+Office Rent
+Electricity Bill
+Internet Bill
+Cleaning Bill
+Employee salaries
+
+Recurring Bills Management System can be used by AllinCall to keep track of their bill dues. 
+The project makes use of a SQLite, Django, HTML and CSS. The system makes use of SQLite to store the user information, bill details, etc and HTML/CSS for creating a user friendly interface..
 
 ## Getting Started
 
