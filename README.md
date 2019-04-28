@@ -11,7 +11,7 @@ The project makes use of a SQLite, Django, HTML and CSS. The system makes use of
 
 ## Getting Started
 
-*	**1** git clone https://github.com/definit3/Guest-Room-Booking.git
+*	**1** git clone https://github.com/definit3/Recurring-Bills-Management-System.git
 *	**2** python manage.py runserver
 *	**3** Open localhost on browser
 
