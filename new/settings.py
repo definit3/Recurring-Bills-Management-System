@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'leave',
-    'qr_code',
     'roombook',
     'users',
     'django_extensions',
