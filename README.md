@@ -18,7 +18,10 @@ The project makes use of a SQLite, Django, HTML and CSS. The system makes use of
 
 ## Built With
 
-*	Django
+*	Python version: 3.5.2
+* Django version: 2.1.2
+Packages:
+* Django-extension: https://django-extensions.readthedocs.io/en/latest/installation_instructions.html
 * HTML
 * CSS
 
