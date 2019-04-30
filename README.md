@@ -10,18 +10,20 @@ Recurring Bills Management System can be used by AllinCall to keep track of thei
 The project makes use of a SQLite, Django, HTML and CSS. The system makes use of SQLite to store the user information, bill details, etc and HTML/CSS for creating a user friendly interface..
 
 ## Getting Started
+Make sure you have these packages installed.
+* **1**	Python version: 3.5.2
+* **2** Django version: 2.1.2
+* **3** Django-extension: https://django-extensions.readthedocs.io/en/latest/installation_instructions.html
 
-*	**1** git clone https://github.com/definit3/Recurring-Bills-Management-System.git
-*	**2** python manage.py runserver
-*	**3** Open localhost on browser
+*	**4** git clone https://github.com/definit3/Recurring-Bills-Management-System.git
+*	**5** python manage.py runserver
+*	**6** Open localhost on browser
 
 
 ## Built With
 
 *	Python version: 3.5.2
 * Django version: 2.1.2
-Packages:
-* Django-extension: https://django-extensions.readthedocs.io/en/latest/installation_instructions.html
 * HTML
 * CSS
 
