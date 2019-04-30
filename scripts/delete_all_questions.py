@@ -9,7 +9,7 @@ def run():
     obj= Bill.objects.all()
     for i in obj:
         print(i.due_date)
-        if i.due_date != now.day:
+        if i.due_date == now.day:
             s = smtplib.SMTP(host,port)  #enter mail server host and port number
             s.starttls()
 
