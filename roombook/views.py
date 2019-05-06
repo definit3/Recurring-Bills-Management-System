@@ -20,8 +20,7 @@ class billbookView(TemplateView):
         form = BillForm(request.POST)
         if form.is_valid():
             form.save()
-            delta = 200
-            args = {'form': form, 'days': delta}
+            args = {'form': form}
             return render(request, self.template_name2, args)
 
         else:

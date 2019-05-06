@@ -82,14 +82,9 @@ def warden_login(request):
                 username=cd['username'],
                 password=cd['password'])
             if user is not None:
-                if not user.is_warden:
-                    return HttpResponse('Invalid Login')
-                elif user.is_active:
-                    bill = Bill.objects.all()
-                    args = {'bill': bill}
-                    return render(request, 'bill_details.html', args)
-                else:
-                    return HttpResponse('Disabled account')
+                bill = Bill.objects.all()
+                args = {'bill': bill}
+                return render(request, 'bill_details.html', args)
             else:
                 return HttpResponse('Invalid Login')
     else:

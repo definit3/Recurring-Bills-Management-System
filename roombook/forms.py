@@ -10,12 +10,28 @@ class BillForm(forms.ModelForm):
             'placeholder': 'Enter Your Bill Name'
         }
     ))
-    bill_amount = forms.IntegerField()
-    due_date = forms.IntegerField()
+    bill_amount = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter the bill amount'
+        }
+    ))
+    due_date = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter Day number( e.g "5")'
+        }
+    ))
+    email_id = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter Your email-id'
+        }
+    ))
 
     class Meta:
         model = Bill
-        fields = ('name_of_the_bill', 'bill_amount', 'due_date')
+        fields = ('name_of_the_bill', 'bill_amount', 'due_date', 'email_id')
 
 
 
