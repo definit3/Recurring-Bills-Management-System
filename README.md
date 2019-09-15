@@ -1,12 +1,12 @@
 # Recurring Bills Management System
-At the beginning of every month, AllinCall is supposed to pay certain bills. This includes several bills like:
+At the beginning of every month, Company is supposed to pay certain bills. This includes several bills like:
 Office Rent
 Electricity Bill
 Internet Bill
 Cleaning Bill
 Employee salaries
 
-Recurring Bills Management System can be used by AllinCall to keep track of their bill dues. 
+Recurring Bills Management System can be used by Companies to keep track of their bill dues. 
 The project makes use of a SQLite, Django, HTML and CSS. The system makes use of SQLite to store the user information, bill details, etc and HTML/CSS for creating a user friendly interface..
 
 
